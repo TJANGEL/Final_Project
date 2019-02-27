@@ -86,19 +86,13 @@ Click [here](#) to view Heroku deployed website
 - [Express.js](http://www.dropwizard.io/1.0.2/docs/) - The web framework
 - [nodemon](https://nodemon.io/)
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
-- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See the list of [contributors](https://github.com/TJANGEL/impatient_netflixing/graphs/contributors) who participated in this project.
 
 ## License
 
