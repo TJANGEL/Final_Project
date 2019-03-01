@@ -1,4 +1,3 @@
-
 # Impatient Netflixing
 
 App to help users find something to watch in the overwhelming options Netflix has to offer
@@ -57,7 +56,7 @@ Give an example
 
 ## Deployment (Heroku)
 
-Click [here](#) to view Heroku deployed website
+Click [here](https://peaceful-mountain-84461.herokuapp.com/) to view Heroku deployed website
 
 ### npm install packages
 
