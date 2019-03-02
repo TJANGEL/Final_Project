@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Roulette from "./pages/Roulette";
-import Saved from "./pages/Saved";
+import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
 import About from "./pages/About";
 import Nav from "./components/Nav";
@@ -21,7 +21,7 @@ class App extends Component {
               <Route exact path="/" component={Roulette} />
               <Route path="/login" component={Login} />
               <Route path="/about" component={About} />
-              <Route path="/saved" component={Saved} />
+              <Route path="/favorites" component={Favorites} />
             </Switch>
             <Footer />
           </div>
