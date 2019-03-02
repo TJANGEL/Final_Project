@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Roulette from "./pages/Roulette";
 import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import About from "./pages/About";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
@@ -20,6 +21,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Roulette} />
               <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
               <Route path="/about" component={About} />
               <Route path="/favorites" component={Favorites} />
             </Switch>
