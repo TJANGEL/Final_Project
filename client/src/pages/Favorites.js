@@ -1,5 +1,6 @@
 import React from "react";
 import ResultsContainer from "../components/ResultsContainer";
+import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 
 class Saved extends React.Component {
@@ -24,6 +25,7 @@ class Saved extends React.Component {
     console.log(this.state.favorites);
     return (
       <main>
+        <Jumbotron />
         <ResultsContainer
           favorites={this.state.favorites}
           path={this.props.match.path}
