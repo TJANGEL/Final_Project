@@ -70,6 +70,8 @@ Click [here](https://peaceful-mountain-84461.herokuapp.com/) to view Heroku depl
 
 `axios`
 
+`react-bootstrap`
+
 `react-router-dom`
 
 `react-scripts`
@@ -85,6 +87,7 @@ Click [here](https://peaceful-mountain-84461.herokuapp.com/) to view Heroku depl
 - [React.js](https://reactjs.org/)
 - [Express.js](http://www.dropwizard.io/1.0.2/docs/) - The web framework
 - [nodemon](https://nodemon.io/)
+- [React-Boostrap](https://react-bootstrap.netlify.com/) - CSS Framework
 
 ## Versioning
 
