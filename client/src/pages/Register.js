@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Button, Form } from "react-bootstrap";
 import Jumbotron from "../components/Jumbotron";
 
-export default class Login extends Component {
+export default class Register extends Component {
   constructor(props) {
     super(props);
 
@@ -29,7 +29,7 @@ export default class Login extends Component {
 
   //   render() {
   //     return (
-  //       <div className="Login">
+  //       <div className="Register">
   //         <form onSubmit={this.handleSubmit}>
   //           <FormGroup controlId="email" bsSize="large">
   //             <ControlLabel>Email</ControlLabel>
@@ -64,9 +64,9 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="Register">
         <Jumbotron>
-          <h1>Login</h1>
+          <h1>Register</h1>
         </Jumbotron>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="formBasicEmail" bsSize="large">
@@ -78,9 +78,12 @@ export default class Login extends Component {
               onChange={this.handleChange}
               placeholder="Enter email"
             />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
           </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group controlId="formBasicPassword" bsSize="large">
             <Form.Label>Password</Form.Label>
             <Form.Control
               value={this.state.password}
@@ -99,7 +102,7 @@ export default class Login extends Component {
             bsSize="large"
             disabled={!this.validateForm()}
           >
-            Login
+            Register
           </Button>
         </Form>
       </div>
