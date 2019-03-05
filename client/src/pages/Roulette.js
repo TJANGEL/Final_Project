@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
+import RouletteWheel from "../components/RouletteWheel";
 import {
   Row,
   Col,
@@ -42,7 +43,10 @@ export class Roulette extends Component {
                 ))}
               </ButtonToolbar>
             </Col>
-            <Col sm={4}>Result:</Col>
+            <Col sm={4}>
+              Result:
+              <RouletteWheel />
+            </Col>
           </Row>
         </Container>
       </div>
