@@ -17,8 +17,8 @@ export class Roulette extends Component {
         <Row>
           <Col sm={12}>
             <Jumbotron>
-              <h1>IMPATIENT NETFLIXING</h1>
-              <h3>Spin the wheel to decide what you'll watch next</h3>
+              {/* <h1>IMPATIENT NETFLIXING</h1> */}
+              <h1>Spin the Wheel to Decide What You'll Watch Next</h1>
             </Jumbotron>
           </Col>
         </Row>
