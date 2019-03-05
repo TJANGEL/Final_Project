@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
-import Jumbotron from "./components/Jumbotron";
+// import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
         <Router>
           <div>
             <Navbar fixed="top" />
-            <Jumbotron />
+            {/* <Jumbotron /> */}
             <Switch>
               <Route exact path="/" component={Roulette} />
               <Route path="/login" component={Login} />
