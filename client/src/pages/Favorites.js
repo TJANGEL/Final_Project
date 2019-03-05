@@ -2,7 +2,6 @@ import React from "react";
 import ResultsContainer from "../components/ResultsContainer";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import Jumbotron from "../components/Jumbotron";
 
 class Favorites extends React.Component {
   constructor(props) {
