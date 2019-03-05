@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { Button, Form } from "react-bootstrap";
+import Jumbotron from "../components/Jumbotron";
 
 export default class Register extends Component {
   constructor(props) {
@@ -64,6 +65,9 @@ export default class Register extends Component {
   render() {
     return (
       <div className="Register">
+        <Jumbotron>
+          <h1>Register</h1>
+        </Jumbotron>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="formBasicEmail" bsSize="large">
             <Form.Label>Email</Form.Label>
@@ -88,9 +92,9 @@ export default class Register extends Component {
               placeholder="Password"
             />
           </Form.Group>
-          <Form.Group controlId="formBasicChecbox">
+          {/* <Form.Group controlId="formBasicChecbox">
             <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
+          </Form.Group> */}
           <Button
             variant="primary"
             type="submit"
