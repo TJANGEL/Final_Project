@@ -12,4 +12,3 @@ router.use(function(req, res) {
 
 module.exports = router;
 
-<Route path="/login" exact component={Login} />
