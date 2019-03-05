@@ -14,17 +14,20 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Passport authentification
-app.use(session({ secret: process.env.PASSPORT_SECRET }));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session({ secret: process.env.PASSPORT_SECRET }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Add routes, both API and view
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/netflixTitles"
-);
+mongoose
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/netflixTitles", {
+    useNewUrlParser: true
+  })
+  .then(() => console.log("mongoDB connected"))
+  .catch(err => console.log(err));
 
 // Start the API server
 app.listen(PORT, function() {
