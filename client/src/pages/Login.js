@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 export default class Login extends Component {
   constructor(props) {
@@ -25,36 +25,81 @@ export default class Login extends Component {
     event.preventDefault();
   };
 
+  //   render() {
+  //     return (
+  //       <div className="Login">
+  //         <form onSubmit={this.handleSubmit}>
+  //           <FormGroup controlId="email" bsSize="large">
+  //             <ControlLabel>Email</ControlLabel>
+  //             <FormControl
+  //               autoFocus
+  //               type="email"
+  //               value={this.state.email}
+  //               onChange={this.handleChange}
+  //             />
+  //           </FormGroup>
+  //           <FormGroup controlId="password" bsSize="large">
+  //             <ControlLabel>Password</ControlLabel>
+  //             <FormControl
+  //               value={this.state.password}
+  //               onChange={this.handleChange}
+  //               type="password"
+  //             />
+  //           </FormGroup>
+  //           <Button
+  //             block
+  //             bsSize="large"
+  //             disabled={!this.validateForm()}
+  //             type="submit"
+  //           >
+  //             Login
+  //           </Button>
+  //         </form>
+  //       </div>
+  //     );
+  //   }
+  // }
+
   render() {
     return (
       <div className="Login">
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
-            <FormControl
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group controlId="formBasicEmail" bsSize="large">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
               autoFocus
               type="email"
               value={this.state.email}
               onChange={this.handleChange}
+              placeholder="Enter email"
             />
-          </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
-            <FormControl
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
               value={this.state.password}
               onChange={this.handleChange}
               type="password"
+              placeholder="Password"
             />
-          </FormGroup>
+          </Form.Group>
+          <Form.Group controlId="formBasicChecbox">
+            <Form.Check type="checkbox" label="Check me out" />
+          </Form.Group>
           <Button
+            variant="primary"
+            type="submit"
             block
             bsSize="large"
             disabled={!this.validateForm()}
-            type="submit"
           >
             Login
           </Button>
-        </form>
+        </Form>
       </div>
     );
   }
