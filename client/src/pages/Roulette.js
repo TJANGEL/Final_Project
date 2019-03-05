@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
-import RouletteWheel from "../components/RouletteWheel";
+// import RouletteWheel from "../components/RouletteWheel";
 import {
   Row,
   Col,
@@ -45,7 +45,7 @@ export class Roulette extends Component {
             </Col>
             <Col sm={4}>
               Result:
-              <RouletteWheel />
+              {/* <RouletteWheel /> */}
             </Col>
           </Row>
         </Container>

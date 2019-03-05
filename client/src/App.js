@@ -6,7 +6,7 @@ import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import About from "./pages/About";
-import Nav from "./components/Nav";
+import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
 
@@ -16,7 +16,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <Nav />
+            <Navbar fixed="top" />
             <Jumbotron />
             <Switch>
               <Route exact path="/" component={Roulette} />
