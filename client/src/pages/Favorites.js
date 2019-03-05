@@ -25,7 +25,9 @@ class Favorites extends React.Component {
     console.log(this.state.favorites);
     return (
       <main>
-        <Jumbotron />
+        <Jumbotron>
+          <h1>Favorites</h1>
+        </Jumbotron>
         <ResultsContainer
           favorites={this.state.favorites}
           path={this.props.match.path}
