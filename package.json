@@ -26,9 +26,12 @@
   "homepage": "https://github.com/TJANGEL/impatient_netflixing#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrpyt": "^2.0.0",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
     "mongoose": "^5.4.16",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
     "react-bootstrap": "^1.0.0-beta.5",
     "reactstrap": "^7.1.0"
   },
