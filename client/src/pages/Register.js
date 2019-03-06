@@ -64,47 +64,49 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div className="Register">
+      <div>
         <Jumbotron>
           <h1>Register</h1>
         </Jumbotron>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group controlId="formBasicEmail" bsSize="large">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              autoFocus
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              placeholder="Enter email"
-            />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
+        <div className="Register">
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group controlId="formBasicEmail" bsSize="large">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                autoFocus
+                type="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                placeholder="Enter email"
+              />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
 
-          <Form.Group controlId="formBasicPassword" bsSize="large">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-              placeholder="Password"
-            />
-          </Form.Group>
-          {/* <Form.Group controlId="formBasicChecbox">
+            <Form.Group controlId="formBasicPassword" bsSize="large">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                value={this.state.password}
+                onChange={this.handleChange}
+                type="password"
+                placeholder="Password"
+              />
+            </Form.Group>
+            {/* <Form.Group controlId="formBasicChecbox">
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group> */}
-          <Button
-            variant="primary"
-            type="submit"
-            block
-            bsSize="large"
-            disabled={!this.validateForm()}
-          >
-            Register
-          </Button>
-        </Form>
+            <Button
+              variant="primary"
+              type="submit"
+              block
+              bsSize="large"
+              disabled={!this.validateForm()}
+            >
+              Register
+            </Button>
+          </Form>
+        </div>
       </div>
     );
   }

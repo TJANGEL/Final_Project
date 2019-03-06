@@ -64,44 +64,46 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <div>
         <Jumbotron>
           <h1>Login</h1>
         </Jumbotron>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group controlId="formBasicEmail" bsSize="large">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              autoFocus
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              placeholder="Enter email"
-            />
-          </Form.Group>
+        <div>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group controlId="formBasicEmail" bsSize="large">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                autoFocus
+                type="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                placeholder="Enter email"
+              />
+            </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-              placeholder="Password"
-            />
-          </Form.Group>
-          {/* <Form.Group controlId="formBasicChecbox">
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                value={this.state.password}
+                onChange={this.handleChange}
+                type="password"
+                placeholder="Password"
+              />
+            </Form.Group>
+            {/* <Form.Group controlId="formBasicChecbox">
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group> */}
-          <Button
-            variant="primary"
-            type="submit"
-            block
-            bsSize="large"
-            disabled={!this.validateForm()}
-          >
-            Login
-          </Button>
-        </Form>
+            <Button
+              variant="primary"
+              type="submit"
+              block
+              bsSize="large"
+              disabled={!this.validateForm()}
+            >
+              Login
+            </Button>
+          </Form>
+        </div>
       </div>
     );
   }
