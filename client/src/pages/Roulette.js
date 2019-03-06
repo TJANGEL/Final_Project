@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
-// import RouletteWheel from "../components/RouletteWheel";
+import RouletteWheel from "../components/RouletteWheel";
 import {
   Row,
   Col,
@@ -17,15 +17,15 @@ export class Roulette extends Component {
         <Row>
           <Col sm={12}>
             <Jumbotron>
-              <h1>IMPATIENT NETFLIXING</h1>
-              <h3>Roll to Decide what you'll watch next</h3>
+              {/* <h1>IMPATIENT NETFLIXING</h1> */}
+              <h1>Spin the Wheel to Decide What You'll Watch Next</h1>
             </Jumbotron>
           </Col>
         </Row>
         <Container>
           <Row>
             <Col sm={8}>
-              <h2>Parameters:</h2>
+              Filter:
               <ButtonToolbar>
                 {["Danger"].map(variant => (
                   <DropdownButton
@@ -45,7 +45,7 @@ export class Roulette extends Component {
             </Col>
             <Col sm={4}>
               Result:
-              {/* <RouletteWheel /> */}
+              <RouletteWheel />
             </Col>
           </Row>
         </Container>
