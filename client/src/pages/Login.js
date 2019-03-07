@@ -68,7 +68,7 @@ export default class Login extends Component {
         <Jumbotron>
           <h1>Login</h1>
         </Jumbotron>
-        <div>
+        <div className="Login">
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="formBasicEmail" bsSize="large">
               <Form.Label>Email</Form.Label>
