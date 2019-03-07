@@ -74,9 +74,9 @@ class RouletteWheel extends React.Component {
 
     const canvas = this.refs.canvas;
     if (canvas.getContext) {
-      const outsideRadius = baseSize - 25;
+      const outsideRadius = baseSize - 15;
       const textRadius = baseSize - 45;
-      const insideRadius = baseSize - 55;
+      const insideRadius = baseSize - 75;
 
       ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, 600, 600);
