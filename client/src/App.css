@@ -23,7 +23,8 @@
   color: #61dafb;
 }
 
-.remove-btn {
+.remove-btn,
+.link {
   margin-left: 1rem;
 }
 
