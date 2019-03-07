@@ -4,10 +4,10 @@ import RouletteWheel from "../components/RouletteWheel";
 import {
   Row,
   Col,
-  Container,
-  ButtonToolbar,
-  DropdownButton,
-  Dropdown
+  Container
+  // ButtonToolbar,
+  // DropdownButton,
+  // Dropdown
 } from "react-bootstrap";
 
 export class Roulette extends Component {
@@ -24,9 +24,10 @@ export class Roulette extends Component {
         </Row>
         <Container>
           <Row>
-            <Col sm={8}>
+            <Col sm={6}>
               Filter:
-              <ButtonToolbar>
+              <RouletteWheel />
+              {/* <ButtonToolbar>
                 {["Danger"].map(variant => (
                   <DropdownButton
                     title={variant}
@@ -41,11 +42,11 @@ export class Roulette extends Component {
                     <Dropdown.Item eventKey="5">another</Dropdown.Item>
                   </DropdownButton>
                 ))}
-              </ButtonToolbar>
+              </ButtonToolbar> */}
             </Col>
-            <Col sm={4}>
+            <Col sm={6}>
               Result:
-              <RouletteWheel />
+              {/* <RouletteWheel /> */}
             </Col>
           </Row>
         </Container>

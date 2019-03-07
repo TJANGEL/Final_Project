@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Roulette from "./pages/Roulette";
 import Favorites from "./pages/Favorites";
@@ -7,50 +8,60 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
-// import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
 import { inherits } from "util";
-import cheerio from 'cheerio';
-import axios from 'axios';
+import cheerio from "cheerio";
+import axios from "axios";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       mediaList: [{}]
-    }
+    };
   }
 
   async movieScraper(maxPageNumber) {
-    let minRating = 0, audio = 'en', minYear = 1920, order = 'date'
-    let movieArray = []
-    let maxYear = new Date().getFullYear
-    const URL = `https://flixable.com/?min-rating=${minRating}&audio=${audio}&min-year=${minYear}&max-year=${maxYear}&order=${order}&page=`
+    let minRating = 0,
+      audio = "en",
+      minYear = 1920,
+      order = "date";
+    let movieArray = [];
+    let maxYear = new Date().getFullYear;
+    const URL = `https://flixable.com/?min-rating=${minRating}&audio=${audio}&min-year=${minYear}&max-year=${maxYear}&order=${order}&page=`;
 
     for (let start = 0; start <= maxPageNumber; start++) {
       // console.log("scraping Page: " + start)
-      let response = await axios.get(URL + start)
+      let response = await axios.get(URL + start);
       let $ = cheerio.load(response.data);
       $(".poster-container").each((i, element) => {
-        let imageLink = $(element).children('a').children('img').attr('src');
-        let title = $(element).children('a').children('img').attr('alt');
-        let titleLink = $(element).children('a').attr('href');
+        let imageLink = $(element)
+          .children("a")
+          .children("img")
+          .attr("src");
+        let title = $(element)
+          .children("a")
+          .children("img")
+          .attr("alt");
+        let titleLink = $(element)
+          .children("a")
+          .attr("href");
         if (titleLink) {
           let movieObject = {
             title: title,
             image: imageLink,
             url: "https://flixable.com" + titleLink
-          }
-          movieArray.push(movieObject)
+          };
+          movieArray.push(movieObject);
         }
-      })
+      });
     }
-    return movieArray
+    return movieArray;
   }
 
   async componentWillMount() {
     try {
-      let movieArray
+      let movieArray;
       // let response = await axios.get("https://flixable.com")
       // let $ = cheerio.load(response.data);
       // let pageNumbersArray = []
@@ -70,11 +81,11 @@ class App extends Component {
       //   this.setState({ mediaList: movieArray })
       //   console.log(movieArray.length)
       // }
-      movieArray = await this.movieScraper(15)
-      this.setState({ mediaList: movieArray })
-      console.log(movieArray.length)
+      movieArray = await this.movieScraper(15);
+      this.setState({ mediaList: movieArray });
+      console.log(movieArray.length);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
