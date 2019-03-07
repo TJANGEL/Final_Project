@@ -95,7 +95,6 @@ class App extends Component {
         <Router>
           <div>
             <Navbar fixed="top" />
-            {/* <Jumbotron /> */}
             <Switch>
               <Route exact path="/" component={Roulette} />
               <Route path="/login" component={Login} />
