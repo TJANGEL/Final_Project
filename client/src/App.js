@@ -7,6 +7,7 @@ import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import About from "./pages/About";
+import FlipMove from "./pages/FlipMove";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { inherits } from "util";
@@ -101,6 +102,7 @@ class App extends Component {
               <Route path="/register" component={Register} />
               <Route path="/about" component={About} />
               <Route path="/favorites" component={Favorites} />
+              <Route path="/flipmove" component={FlipMove} />
             </Switch>
             <Footer />
           </div>

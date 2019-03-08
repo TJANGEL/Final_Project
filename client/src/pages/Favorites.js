@@ -2,6 +2,7 @@ import React from "react";
 import Jumbotron from "../components/Jumbotron";
 import { ListGroup, Button } from "react-bootstrap";
 // import { Card, CardDeck } from "react-bootstrap";
+import FlipMove from "react-flip-move";
 
 // import API from "../utils/API";
 
@@ -63,7 +64,8 @@ class Favorites extends React.Component {
           <h2>No Favorites Saved</h2>
         )} */}
         <ListGroup className="mb-2">
-          <ListGroup.Item>
+          {/* <FlipMove> */}
+          <ListGroup.Item key="a">
             Kiss Kiss Bang Bang
             <Button variant="outline-secondary" className="link" href="#">
               Details
@@ -72,7 +74,7 @@ class Favorites extends React.Component {
               &times;
             </Button>
           </ListGroup.Item>
-          <ListGroup.Item>
+          <ListGroup.Item key="b">
             Avengers
             <Button variant="outline-secondary" className="link" href="#">
               Details
@@ -81,7 +83,7 @@ class Favorites extends React.Component {
               &times;
             </Button>
           </ListGroup.Item>
-          <ListGroup.Item>
+          <ListGroup.Item key="c">
             Wreck it Ralph
             <Button variant="outline-secondary" className="link" href="#">
               Details
@@ -90,7 +92,7 @@ class Favorites extends React.Component {
               &times;
             </Button>
           </ListGroup.Item>
-          <ListGroup.Item>
+          <ListGroup.Item key="d">
             Frozen
             <Button variant="outline-secondary" className="link" href="#">
               Details
@@ -99,6 +101,7 @@ class Favorites extends React.Component {
               &times;
             </Button>
           </ListGroup.Item>
+          {/* </FlipMove> */}
         </ListGroup>
         {/* <CardDeck>
           <Card>
