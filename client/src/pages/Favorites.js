@@ -64,8 +64,8 @@ class Favorites extends React.Component {
         <ListGroup className="mb-2">
           <ListGroup.Item>
             Kiss Kiss Bang Bang
-            <Button className="link" href="#">
-              Link
+            <Button className="link" href="#" variant="outline-info">
+              Details
             </Button>
             <Button className="remove-btn" variant="outline-danger">
               &times;
@@ -73,8 +73,8 @@ class Favorites extends React.Component {
           </ListGroup.Item>
           <ListGroup.Item>
             Avengers
-            <Button className="link" href="#">
-              Link
+            <Button className="link" href="#" variant="outline-info">
+              Details
             </Button>
             <Button className="remove-btn" variant="outline-danger">
               &times;
@@ -82,8 +82,8 @@ class Favorites extends React.Component {
           </ListGroup.Item>
           <ListGroup.Item>
             Wreck it Ralph
-            <Button className="link" href="#">
-              Link
+            <Button className="link" href="#" variant="outline-info">
+              Details
             </Button>
             <Button className="remove-btn" variant="outline-danger">
               &times;
@@ -91,8 +91,8 @@ class Favorites extends React.Component {
           </ListGroup.Item>
           <ListGroup.Item>
             Frozen
-            <Button className="link" href="#">
-              Link
+            <Button className="link" href="#" variant="outline-info">
+              Details
             </Button>
             <Button className="remove-btn" variant="outline-danger">
               &times;
