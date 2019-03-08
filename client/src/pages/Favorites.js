@@ -1,6 +1,7 @@
 import React from "react";
 import Jumbotron from "../components/Jumbotron";
 import { ListGroup, Button } from "react-bootstrap";
+// import { Card, CardDeck } from "react-bootstrap";
 
 // import API from "../utils/API";
 
@@ -37,7 +38,6 @@ class Favorites extends React.Component {
         <Jumbotron>
           <h1>My Favorites</h1>
         </Jumbotron>
-
         {/* {this.state.titles.length ? (
           <ListGroup>
             {this.state.titles.map(title => (
@@ -45,7 +45,9 @@ class Favorites extends React.Component {
                 <Link to={"/title/" + title._id}>
                   {title.title} {title.title}
                 </Link>
-                <Button href="#">Link</Button>
+                <Button variant="outline-secondary" className="link" href="#">
+              Details
+            </Button>
                 <Button
                       className="remove-btn"
                       color="danger"
@@ -60,12 +62,11 @@ class Favorites extends React.Component {
         ) : (
           <h2>No Favorites Saved</h2>
         )} */}
-
         <ListGroup className="mb-2">
           <ListGroup.Item>
             Kiss Kiss Bang Bang
-            <Button className="link" href="#">
-              Link
+            <Button variant="outline-secondary" className="link" href="#">
+              Details
             </Button>
             <Button className="remove-btn" variant="outline-danger">
               &times;
@@ -73,8 +74,8 @@ class Favorites extends React.Component {
           </ListGroup.Item>
           <ListGroup.Item>
             Avengers
-            <Button className="link" href="#">
-              Link
+            <Button variant="outline-secondary" className="link" href="#">
+              Details
             </Button>
             <Button className="remove-btn" variant="outline-danger">
               &times;
@@ -82,8 +83,8 @@ class Favorites extends React.Component {
           </ListGroup.Item>
           <ListGroup.Item>
             Wreck it Ralph
-            <Button className="link" href="#">
-              Link
+            <Button variant="outline-secondary" className="link" href="#">
+              Details
             </Button>
             <Button className="remove-btn" variant="outline-danger">
               &times;
@@ -91,14 +92,64 @@ class Favorites extends React.Component {
           </ListGroup.Item>
           <ListGroup.Item>
             Frozen
-            <Button className="link" href="#">
-              Link
+            <Button variant="outline-secondary" className="link" href="#">
+              Details
             </Button>
             <Button className="remove-btn" variant="outline-danger">
               &times;
             </Button>
           </ListGroup.Item>
         </ListGroup>
+        {/* <CardDeck>
+          <Card>
+            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </Card.Text>
+              <Button variant="outline-secondary" className="link" href="#">
+                Details
+              </Button>
+              <Button className="remove-btn" variant="outline-danger">
+                &times;
+              </Button>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This card has even longer content
+                than the first to show that equal height action.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This card has even longer content
+                than the first to show that equal height action.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </Card>
+        </CardDeck> */}
       </div>
     );
   }
