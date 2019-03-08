@@ -24,12 +24,13 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/netflixTitles", {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true
   })
   .then(() => console.log("mongoDB connected"))
   .catch(err => console.log(err));
 
 // Start the API server
-app.listen(PORT, function () {
+app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
