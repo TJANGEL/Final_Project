@@ -27,7 +27,13 @@ class RouletteWheel extends React.Component {
   };
 
   static defaultProps = {
-    options: ["item1", "item2", "item3", "item4", "item5"],
+    options: [
+      "Drama",
+      "Thrillers",
+      "Comedies",
+      "Action & Adventure",
+      "Cult Movies"
+    ],
     baseSize: 275,
     spinAngleStart: Math.random() * 10 + 10,
     spinTimeTotal: Math.random() * 3 + 4 * 1000
@@ -75,7 +81,7 @@ class RouletteWheel extends React.Component {
     const canvas = this.refs.canvas;
     if (canvas.getContext) {
       const outsideRadius = baseSize - 15;
-      const textRadius = baseSize - 45;
+      const textRadius = baseSize - 55;
       const insideRadius = baseSize - 75;
 
       ctx = canvas.getContext("2d");
@@ -163,7 +169,7 @@ class RouletteWheel extends React.Component {
     ctx.fillText(
       text,
       baseSize - ctx.measureText(text).width / 2,
-      baseSize / 3
+      baseSize / 1
     );
     ctx.restore();
     this.props.onComplete(text);
