@@ -1,14 +1,31 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import RouletteWheel from "../components/RouletteWheel";
-import {
-  Row,
-  Col,
-  Container
-  // ButtonToolbar,
-  // DropdownButton,
-  // Dropdown
-} from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
+
+const handleOnComplete = value => {
+  console.log(value);
+};
+
+// function genGenres(charA, charZ) {
+//   var a = [],
+//     i = charA.charCodeAt(0),
+//     j = charZ.charCodeAt(0);
+//   for (; i <= j; ++i) {
+//     a.push(String.fromCharCode(i));
+//   }
+//   return a;
+// }
+
+// const options = genGenres("a", "z");
+
+const options = [
+  "Drama",
+  "Thrillers",
+  "Comedies",
+  "Action & Adventure",
+  "Cult Movies"
+];
 
 export class Roulette extends Component {
   render() {
@@ -26,27 +43,14 @@ export class Roulette extends Component {
           <Row>
             <Col sm={6}>
               Filter:
-              <RouletteWheel />
-              {/* <ButtonToolbar>
-                {["Danger"].map(variant => (
-                  <DropdownButton
-                    title={variant}
-                    variant={variant.toLowerCase()}
-                    id={`dropdown-variants-${variant}`}
-                    key={variant}
-                  >
-                    <Dropdown.Item eventKey="1">Genre</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">another</Dropdown.Item>
-                    <Dropdown.Item eventKey="3">another</Dropdown.Item>
-                    <Dropdown.Item eventKey="4">another</Dropdown.Item>
-                    <Dropdown.Item eventKey="5">another</Dropdown.Item>
-                  </DropdownButton>
-                ))}
-              </ButtonToolbar> */}
+              <RouletteWheel
+                options={options}
+                baseSize={250}
+                onComplete={handleOnComplete}
+              />
             </Col>
-            <Col sm={6}>
+            <Col className="result" sm={6}>
               Result:
-              {/* <RouletteWheel /> */}
             </Col>
           </Row>
         </Container>
