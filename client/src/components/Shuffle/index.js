@@ -5,9 +5,11 @@ import throttle from "lodash/throttle";
 import { ListGroup, Button } from "react-bootstrap";
 
 import articles from "../../data/articles";
+// import ResultsContainer from "../ResultsContainer";
 
 import FlipMove from "react-flip-move";
 import Toggle from "../Toggle";
+import "./style.css";
 
 class ListItem extends Component {
   render() {
