@@ -8,9 +8,11 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
-import { inherits } from "util";
+import Footer from "./components/Footer";
+// import { inherits } from "util";
 import cheerio from "cheerio";
 import axios from "axios";
+import API from "./utils/API";
 
 class App extends Component {
   constructor(props) {
@@ -26,8 +28,8 @@ class App extends Component {
       minYear = 1920,
       order = "date";
     let movieArray = [];
-    let maxYear = new Date().getFullYear;
-    const URL = `https://flixable.com/?min-rating=${minRating}&audio=${audio}&min-year=${minYear}&max-year=${maxYear}&order=${order}&page=`;
+    let maxYear = new Date().getFullYear();
+    const URL = `https://www.flixable.com/?min-rating=${minRating}&audio=${audio}&min-year=${minYear}&max-year=${maxYear}&order=${order}&page=`;
 
     for (let start = 0; start <= maxPageNumber; start++) {
       // console.log("scraping Page: " + start)
@@ -38,6 +40,7 @@ class App extends Component {
           .children("a")
           .children("img")
           .attr("src");
+        console.log(imageLink);
         let title = $(element)
           .children("a")
           .children("img")
@@ -80,9 +83,42 @@ class App extends Component {
       //   this.setState({ mediaList: movieArray })
       //   console.log(movieArray.length)
       // }
-      movieArray = await this.movieScraper(15);
-      this.setState({ mediaList: movieArray });
-      console.log(movieArray.length);
+      // movieArray = await this.movieScraper(15);
+
+      // console.log("Size of movieArray: " + movieArray.length)
+      API.getMovies().then(resp => {
+        console.log(resp.data.length)
+        if (resp.data.length === 0) {
+          API.loadAllMovies().then(resp => {
+            movieArray = resp.data
+            // // console.log("size of movie array before setting state:" + movieArray);
+            // this.setState({ mediaList: movieArray });
+          })
+        }
+        else {
+          API.loadLatestMovies.then(resp => {
+
+          })
+        }
+
+
+      })
+      // API.loadAllMovies().then(resp => {
+      //   movieArray = resp.data
+      //   this.setState({ mediaList: movieArray });
+      // })
+      // API.getMovies().then(resp => {
+      //   if (resp.length > 0) {
+      //     //TODO: Just call to scrape first page
+      //     //TODO: API.loadLatestMovies
+      //     //! this.setState({ mediaList: movieArray });
+      //   } else {
+      //     //TODO: call to scrape entire site
+      //     //TODO: API.loadAllMovies
+      //     //! this.setState({ mediaList: movieArray });
+      //   }
+      // });
+      // console.log(movieArray.length);
     } catch (error) {
       console.log(error);
     }
