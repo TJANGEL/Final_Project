@@ -58,9 +58,10 @@ export class Roulette extends Component {
         <Row>
           <Col>
             <Jumbotron>
-              <h1 className="brand-name">IMPATIENT NETFLIXING</h1>
-              <br />
-              <h2>Spin the Wheel to Decide What to Watch</h2>
+              <h1 className="jumbotron-name">IMPATIENT NETFLIXING</h1>
+              <h2 className="instructions">
+                Spin the Wheel to Decide What to Watch
+              </h2>
             </Jumbotron>
           </Col>
         </Row>

@@ -66,7 +66,7 @@ export default class Register extends Component {
     return (
       <div>
         <Jumbotron>
-          <h1>Register</h1>
+          <h1 className="jumbotron-name">REGISTER</h1>
         </Jumbotron>
         <div className="Register">
           <Form onSubmit={this.handleSubmit}>

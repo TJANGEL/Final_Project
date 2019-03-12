@@ -66,7 +66,7 @@ export default class Login extends Component {
     return (
       <div>
         <Jumbotron>
-          <h1>Login</h1>
+          <h1 className="jumbotron-name">LOGIN</h1>
         </Jumbotron>
         <div className="Login">
           <Form onSubmit={this.handleSubmit}>
