@@ -27,5 +27,8 @@ export default {
   },
   deleteTitle: id => {
     return axios.delete(`/api/titles/${id}`);
+  },
+  findTitleByGenre: genre => {
+    return axios.get(`/movies/${genre}`);
   }
 };

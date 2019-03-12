@@ -22,6 +22,15 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByGenre: function (req, res) {
+    // console.log("Controller Genre:" + req.params.genre)
+    db.Movies.find({ genres: req.params.genre }).then(doc => {
+      console.log(doc.length)
+      res.json(doc);
+    }).catch(err => {
+      console.error(err);
+    })
+  },
   create: function (req, res) {
     db.Movies.create(req.body)
       .then(dbModel => res.json(dbModel))
