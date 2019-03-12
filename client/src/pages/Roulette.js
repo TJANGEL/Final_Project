@@ -42,6 +42,8 @@ const movieGenres = [
   "Thrillers"
 ];
 
+const movies = [];
+
 export class Roulette extends Component {
   loadOptions() {
     // Shuffle array
@@ -51,6 +53,12 @@ export class Roulette extends Component {
     let selected = shuffled.slice(0, 6);
     return selected;
   }
+
+  // randomly select movie from db
+  randomMovie = movies => {
+    let randomIndex = Math.floor(Math.random() * movies.length);
+    return movies[randomIndex];
+  };
 
   render() {
     return (
@@ -65,7 +73,7 @@ export class Roulette extends Component {
             </Jumbotron>
           </Col>
         </Row>
-        <Container variant="outline-danger">
+        <Container className="container">
           <Row>
             <Col sm={4}>
               <h3>Genre:</h3>
