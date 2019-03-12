@@ -36,8 +36,9 @@ export class Roulette extends Component {
         <Row>
           <Col>
             <Jumbotron>
-              <h1>IMPATIENT NETFLIXING</h1>
-              <h1>Spin the Wheel to Decide What You'll Watch Next</h1>
+              <h1 className="brand-name">IMPATIENT NETFLIXING</h1>
+              <br />
+              <h2>Spin the Wheel to Decide What to Watch</h2>
             </Jumbotron>
           </Col>
         </Row>
@@ -48,7 +49,7 @@ export class Roulette extends Component {
               <br />
               <RouletteWheel
                 options={options}
-                baseSize={250}
+                baseSize={280}
                 onComplete={handleOnComplete}
               />
             </Col>
