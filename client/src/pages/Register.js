@@ -109,7 +109,7 @@ export default class Register extends Component {
             <Form.Group>
               <Form.Text className="text-center">Already Registered?</Form.Text>
               <Button
-                variant="primary"
+                variant="success"
                 type="submit"
                 block
                 bsSize="large"
