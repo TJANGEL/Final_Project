@@ -105,6 +105,20 @@ export default class Register extends Component {
             >
               Register
             </Button>
+            <br />
+            <Form.Group>
+              <Form.Text className="text-center">Already Registered?</Form.Text>
+              <Button
+                variant="primary"
+                type="submit"
+                block
+                bsSize="large"
+                // disabled={!this.validateForm()}
+                href="/login"
+              >
+                Login
+              </Button>
+            </Form.Group>
           </Form>
         </div>
       </div>
