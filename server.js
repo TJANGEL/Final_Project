@@ -1,5 +1,7 @@
 const express = require("express");
+const session = require("express-session");
 const mongoose = require("mongoose");
+const passport = require("passport");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,9 +16,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Passport authentification
-// app.use(session({ secret: process.env.PASSPORT_SECRET }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+// ### TO DO ###
+// require session package cos express separated it out
+// app.use(session({ secret: process.env.SECRET }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Add routes, both API and view
 app.use(routes);

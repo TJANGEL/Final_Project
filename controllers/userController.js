@@ -1,5 +1,5 @@
 const db = require("../models");
-const bcrypt = require("bcrpyt");
+const bcrypt = require("bcrypt");
 
 module.exports = {
   // Make a new user
@@ -13,7 +13,7 @@ module.exports = {
         bcrypt.hash(req.body.password, salt, (err, hash) => {
           if (err) throw err;
           db.User.create({ email: req.body.email, password: hash })
-            .then(data => res.json(data))
+            .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
         });
       });
@@ -27,6 +27,8 @@ module.exports = {
       }
       bcrypt.compare(req.body.password, user.password).then(isMatch => {
         if (isMatch) {
+          // ### TO DO ###
+          // require jwt module
           jwt.sign(
             { id: user._id },
             process.env.SECRETORKEY,
