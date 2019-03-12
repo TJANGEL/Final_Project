@@ -1,3 +1,5 @@
+<a href="https://travis-ci.org/TJANGEL/impatient_netflixing"><img src="https://travis-ci.org/TJANGEL/impatient_netflixing.svg?branch=master" alt="Build Status"></a> 
+
 # Impatient Netflixing
 
 App to help users find something to watch in the overwhelming options Netflix has to offer
