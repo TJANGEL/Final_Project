@@ -137,7 +137,6 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route path="/favorites" component={Favorites} />
             </Switch>
-            <Footer />
           </div>
         </Router>
       </div>

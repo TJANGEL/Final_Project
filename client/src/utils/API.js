@@ -21,5 +21,10 @@ export default {
   },
   loadLatestMovies: () => {
     return axios.get("/movies/loadLatest");
+  addTitleToDB: titleData => {
+    return axios.post("/api/titles", titleData);
+  },
+  deleteTitle: id => {
+    return axios.delete(`/api/titles/${id}`);
   }
 };
