@@ -11,7 +11,7 @@
 }
 
 .button {
-  padding: 10px 15px;
+  padding: 15px 20px;
   margin-top: 20px;
   font-size: 20px;
   border-radius: 5px;
@@ -19,6 +19,6 @@
 }
 
 .button:hover {
-  border: solid 5px green;
-  color: green;
+  border: solid 6px rgb(197, 6, 6);
+  color: rgb(197, 6, 6);
 }

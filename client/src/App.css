@@ -52,8 +52,16 @@ h6 {
   color: white;
 }
 
-.brand-name {
-  font-size: 50px;
+.jumbotron-name {
+  font-size: 70px;
+  padding-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 5px 5px rgb(197, 6, 6);
+}
+
+.instructions {
+  color: rgb(197, 6, 6);
+  text-shadow: 1px 1px black;
 }
 
 @keyframes App-logo-spin {

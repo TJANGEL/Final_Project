@@ -38,7 +38,7 @@ class Favorites extends React.Component {
     return (
       <div>
         <Jumbotron>
-          <h1>My Favorites</h1>
+          <h1 className="jumbotron-name">MY FAVORITES</h1>
         </Jumbotron>
         {/* {this.state.titles.length ? (
           <ListGroup>
