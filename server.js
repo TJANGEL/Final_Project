@@ -20,6 +20,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Add routes, both API and view
 app.use(routes);
+// require("./routes/apiRoutes")(app);
 
 // Connect to the Mongo DB
 mongoose
@@ -31,6 +32,6 @@ mongoose
   .catch(err => console.log(err));
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
