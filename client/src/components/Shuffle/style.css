@@ -8,6 +8,7 @@
 #shuffle.button {
   display: none;
   position: absolute;
+  color: black;
 }
 
 .list-item {
@@ -31,7 +32,7 @@
   font-size: 14px;
   background: transparent;
   border: 0;
-  color: red;
+  color: black;
 }
 
 .link {
