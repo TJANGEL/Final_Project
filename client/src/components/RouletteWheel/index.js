@@ -27,7 +27,13 @@ class RouletteWheel extends React.Component {
   };
 
   static defaultProps = {
-    options: ["item1", "item2", "item3", "item4", "item5"],
+    options: [
+      "Drama",
+      "Thrillers",
+      "Comedies",
+      "Action & Adventure",
+      "Cult Movies"
+    ],
     baseSize: 275,
     spinAngleStart: Math.random() * 10 + 10,
     spinTimeTotal: Math.random() * 3 + 4 * 1000
@@ -74,9 +80,9 @@ class RouletteWheel extends React.Component {
 
     const canvas = this.refs.canvas;
     if (canvas.getContext) {
-      const outsideRadius = baseSize - 25;
-      const textRadius = baseSize - 45;
-      const insideRadius = baseSize - 55;
+      const outsideRadius = baseSize - 15;
+      const textRadius = baseSize - 55;
+      const insideRadius = baseSize - 75;
 
       ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, 600, 600);
@@ -84,7 +90,7 @@ class RouletteWheel extends React.Component {
       ctx.strokeStyle = "white";
       ctx.lineWidth = 2;
 
-      ctx.font = "14px Helvetica, Arial";
+      ctx.font = "18px Helvetica, Arial";
 
       for (let i = 0; i < options.length; i++) {
         const angle = startAngle + i * arc;
@@ -97,7 +103,7 @@ class RouletteWheel extends React.Component {
         ctx.fill();
 
         ctx.save();
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "black";
         ctx.translate(
           baseSize + Math.cos(angle + arc / 2) * textRadius,
           baseSize + Math.sin(angle + arc / 2) * textRadius
@@ -109,7 +115,7 @@ class RouletteWheel extends React.Component {
       }
 
       //Arrow
-      ctx.fillStyle = "red";
+      ctx.fillStyle = "black";
       ctx.beginPath();
       ctx.lineTo(baseSize + 10, baseSize - (outsideRadius + 20));
       ctx.lineTo(baseSize + 0, baseSize - (outsideRadius - 5));
@@ -158,12 +164,12 @@ class RouletteWheel extends React.Component {
     const arcd = (arc * 180) / Math.PI;
     const index = Math.floor((360 - (degrees % 360)) / arcd);
     ctx.save();
-    ctx.font = "bold 20px Helvetica, Arial";
+    ctx.font = "bold 24px Helvetica, Arial";
     const text = options[index];
     ctx.fillText(
       text,
       baseSize - ctx.measureText(text).width / 2,
-      baseSize / 3
+      baseSize / 1
     );
     ctx.restore();
     this.props.onComplete(text);
@@ -195,7 +201,7 @@ class RouletteWheel extends React.Component {
         <div className="roulette-container">
           <input
             type="button"
-            value="spin"
+            value="SPIN"
             onClick={this.handleOnClick}
             className="button"
             id="spin"

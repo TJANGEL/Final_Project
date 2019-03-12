@@ -24,11 +24,13 @@ app.use(passport.session());
 
 // Add routes, both API and view
 app.use(routes);
+// require("./routes/apiRoutes")(app);
 
 // Connect to the Mongo DB
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/netflixTitles", {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true
   })
   .then(() => console.log("mongoDB connected"))
   .catch(err => console.log(err));

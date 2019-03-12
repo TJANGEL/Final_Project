@@ -9,3 +9,16 @@
   justify-content: center;
   padding: 5px;
 }
+
+.button {
+  padding: 10px 15px;
+  margin-top: 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: solid 2px black;
+}
+
+.button:hover {
+  border: solid 5px green;
+  color: green;
+}

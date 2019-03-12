@@ -1,51 +1,85 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import RouletteWheel from "../components/RouletteWheel";
-import {
-  Row,
-  Col,
-  Container,
-  ButtonToolbar,
-  DropdownButton,
-  Dropdown
-} from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
+import ResultsContainer from "../components/resultsContainer";
+
+const handleOnComplete = value => {
+  console.log(value);
+};
+
+// function genGenres(charA, charZ) {
+//   var a = [],
+//     i = charA.charCodeAt(0),
+//     j = charZ.charCodeAt(0);
+//   for (; i <= j; ++i) {
+//     a.push(String.fromCharCode(i));
+//   }
+//   return a;
+// }
+
+// const options = genGenres("a", "z");
+
+const movieGenres = [
+  "Action & Adventure",
+  "Anime Features",
+  "Children & Family Movies",
+  "Classic Movies",
+  "Comedies",
+  "Cult Movies",
+  "Documentaries",
+  "Dramas",
+  "Faith & Spirtuality",
+  "Horror Movies",
+  "Independent Movies",
+  "International Movies",
+  "LGBTQ Movies",
+  "Music & Musicals",
+  "Romantic Movies",
+  "Sci-Fi & Fantasy",
+  "Sports Movies",
+  "Stand-Up Comedy",
+  "Thrillers"
+];
 
 export class Roulette extends Component {
+  loadOptions() {
+    // Shuffle array
+    const shuffled = movieGenres.sort(() => 0.5 - Math.random());
+
+    // Get sub-array of first 6 elements after shuffled
+    let selected = shuffled.slice(0, 6);
+    return selected;
+  }
+
   render() {
     return (
       <div>
         <Row>
-          <Col sm={12}>
+          <Col>
             <Jumbotron>
-              {/* <h1>IMPATIENT NETFLIXING</h1> */}
-              <h1>Spin the Wheel to Decide What You'll Watch Next</h1>
+              <h1 className="brand-name">IMPATIENT NETFLIXING</h1>
+              <br />
+              <h2>Spin the Wheel to Decide What to Watch</h2>
             </Jumbotron>
           </Col>
         </Row>
-        <Container>
+        <Container variant="outline-danger">
           <Row>
-            <Col sm={8}>
-              Filter:
-              <ButtonToolbar>
-                {["Danger"].map(variant => (
-                  <DropdownButton
-                    title={variant}
-                    variant={variant.toLowerCase()}
-                    id={`dropdown-variants-${variant}`}
-                    key={variant}
-                  >
-                    <Dropdown.Item eventKey="1">Genre</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">another</Dropdown.Item>
-                    <Dropdown.Item eventKey="3">another</Dropdown.Item>
-                    <Dropdown.Item eventKey="4">another</Dropdown.Item>
-                    <Dropdown.Item eventKey="5">another</Dropdown.Item>
-                  </DropdownButton>
-                ))}
-              </ButtonToolbar>
-            </Col>
             <Col sm={4}>
-              Result:
-              <RouletteWheel />
+              <h3>Genre:</h3>
+              <br />
+              <RouletteWheel
+                options={this.loadOptions()}
+                baseSize={280}
+                onComplete={handleOnComplete}
+              />
+            </Col>
+            <Col sm={4} />
+            <Col className="result" sm={4}>
+              <h3>Results:</h3>
+              <br />
+              {/* <ResultsContainer /> */}
             </Col>
           </Row>
         </Container>

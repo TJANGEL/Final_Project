@@ -1,16 +1,31 @@
 import axios from "axios";
 
 export default {
-  getBooks: () => {
-    return axios.get("/api/books");
+  // getTitles: () => {
+  //   return axios.get("/api/titles");
+  // },
+  // searchTitles: title => {
+  //   return axios.post("/search", { title: title });
+  // },
+  // addTitleToDB: bookData => {
+  //   return axios.post("/api/titles", bookData);
+  // },
+  // deleteTitle: id => {
+  //   return axios.delete(`/api/titles/${id}`);
+  // },
+  loadAllMovies: () => {
+    return axios.get("/movies/loadAllMovies");
   },
-  searchBooks: title => {
-    return axios.post("/search", { title: title });
+  getMovies: () => {
+    return axios.get("/movies/findAllMovies");
   },
-  addBookToDB: bookData => {
-    return axios.post("/api/books", bookData);
+  loadLatestMovies: () => {
+    return axios.get("/movies/loadLatest");
   },
-  deleteBook: id => {
-    return axios.delete(`/api/books/${id}`);
+  addTitleToDB: titleData => {
+    return axios.post("/api/titles", titleData);
+  },
+  deleteTitle: id => {
+    return axios.delete(`/api/titles/${id}`);
   }
 };

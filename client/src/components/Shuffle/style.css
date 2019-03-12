@@ -1,0 +1,45 @@
+#shuffle {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#shuffle.button {
+  display: none;
+  position: absolute;
+  color: black;
+}
+
+.list-item {
+  position: relative;
+  margin: 0 6px 12px 6px;
+  padding: 20px;
+  list-style-type: none;
+}
+
+.list-item.list {
+  display: block;
+}
+
+.list-item.grid {
+  display: inline-block;
+}
+
+.list-item.grid button {
+  top: 0;
+  right: 0;
+  font-size: 14px;
+  background: transparent;
+  border: 0;
+  color: black;
+}
+
+.link {
+  margin-right: 1rem;
+}
+
+.poster {
+  width: 250px;
+  height: 350px;
+}
