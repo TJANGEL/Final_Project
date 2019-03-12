@@ -20,16 +20,23 @@ const handleOnComplete = value => {
 
 // const options = genGenres("a", "z");
 
-const options = [
-  "Drama",
-  "Thrillers",
-  "Comedies",
-  "Action & Adventure",
-  "Cult Movies",
-  "Anime Features"
-];
+const movieGenres = ["Action & Adventure", "Anime Features", "Children & Family Movies", "Classic Movies", "Comedies", "Cult Movies", "Documentaries", "Dramas", "Faith & Spirtuality", "Horror Movies",
+  "Independent Movies", "International Movies", "LGBTQ Movies", "Music & Musicals", "Romantic Movies", "Sci-Fi & Fantasy", "Sports Movies", "Stand-Up Comedy", "Thrillers"];
+
+
+
 
 export class Roulette extends Component {
+
+  loadOptions() {
+    // Shuffle array
+    const shuffled = movieGenres.sort(() => 0.5 - Math.random());
+
+    // Get sub-array of first 6 elements after shuffled
+    let selected = shuffled.slice(0, 6);
+    return selected;
+  };
+
   render() {
     return (
       <div>
@@ -48,7 +55,7 @@ export class Roulette extends Component {
               <h3>Genre:</h3>
               <br />
               <RouletteWheel
-                options={options}
+                options={this.loadOptions()}
                 baseSize={280}
                 onComplete={handleOnComplete}
               />
