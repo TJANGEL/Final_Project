@@ -90,7 +90,7 @@ class RouletteWheel extends React.Component {
       ctx.strokeStyle = "white";
       ctx.lineWidth = 2;
 
-      ctx.font = "14px Helvetica, Arial";
+      ctx.font = "18px Helvetica, Arial";
 
       for (let i = 0; i < options.length; i++) {
         const angle = startAngle + i * arc;
@@ -103,7 +103,7 @@ class RouletteWheel extends React.Component {
         ctx.fill();
 
         ctx.save();
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "black";
         ctx.translate(
           baseSize + Math.cos(angle + arc / 2) * textRadius,
           baseSize + Math.sin(angle + arc / 2) * textRadius
@@ -115,7 +115,7 @@ class RouletteWheel extends React.Component {
       }
 
       //Arrow
-      ctx.fillStyle = "red";
+      ctx.fillStyle = "black";
       ctx.beginPath();
       ctx.lineTo(baseSize + 10, baseSize - (outsideRadius + 20));
       ctx.lineTo(baseSize + 0, baseSize - (outsideRadius - 5));
@@ -164,7 +164,7 @@ class RouletteWheel extends React.Component {
     const arcd = (arc * 180) / Math.PI;
     const index = Math.floor((360 - (degrees % 360)) / arcd);
     ctx.save();
-    ctx.font = "bold 20px Helvetica, Arial";
+    ctx.font = "bold 24px Helvetica, Arial";
     const text = options[index];
     ctx.fillText(
       text,
@@ -201,7 +201,7 @@ class RouletteWheel extends React.Component {
         <div className="roulette-container">
           <input
             type="button"
-            value="spin"
+            value="SPIN"
             onClick={this.handleOnClick}
             className="button"
             id="spin"
