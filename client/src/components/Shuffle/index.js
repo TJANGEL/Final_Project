@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from "react";
 import moment from "moment";
 import shuffle from "lodash/shuffle";
 import throttle from "lodash/throttle";
-import { ListGroup, Button } from "react-bootstrap";
+import { ListGroup, Button, Image } from "react-bootstrap";
 
-import articles from "../../data/articles";
+import articles from "../../data/movies";
 // import ResultsContainer from "../ResultsContainer";
 
 import FlipMove from "react-flip-move";
@@ -19,6 +19,7 @@ class ListItem extends Component {
     return (
       <li id={this.props.id} className={listClass} style={style}>
         <h3>{this.props.name}</h3>
+        <Image className="poster" src={this.props.img} />
         <h5>{moment(this.props.timestamp).format("MMM Do, YYYY")}</h5>
         {/* <button onClick={this.props.clickHandler}>
           <i className="far fa-trash-alt" />
@@ -175,14 +176,14 @@ class Shuffle extends Component {
             {this.renderArticles()}
             <footer key="foot">
               <div className="abs-right">
-                <Toggle
+                {/* <Toggle
                   clickHandler={() =>
                     this.moveArticle("articles", "removedArticles")
                   }
                   text="Remove Item"
                   icon="trash"
                   active={this.state.articles.length > 0}
-                />
+                /> */}
               </div>
             </footer>
           </FlipMove>
