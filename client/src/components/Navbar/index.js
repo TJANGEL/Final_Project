@@ -5,6 +5,13 @@ import "./style.css";
 
 // react-bootstrap navbar
 function Navi() {
+  // logOut = e => {
+  //   e.preventDefault();
+
+  //   const { user } = this.props;
+
+  //   user.logOut();
+  // };
   //   // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
   return (
     <Navbar bg="dark" variant="dark">
@@ -15,6 +22,9 @@ function Navi() {
         <Nav.Link href="/login">Login</Nav.Link>
         <Nav.Link href="/">Roulette</Nav.Link>
         <Nav.Link href="/favorites">Favorites</Nav.Link>
+      </Nav>
+      <Nav className="ml-auto">
+        <Nav.Link href="/login">Logout</Nav.Link>
       </Nav>
       <li>
         <a
