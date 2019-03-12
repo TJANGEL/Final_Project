@@ -44,7 +44,7 @@ export class Roulette extends Component {
         <Container>
           <Row>
             <Col sm={4}>
-              <h3>Filter:</h3>
+              <h3>Genre:</h3>
               <RouletteWheel
                 options={options}
                 baseSize={250}
@@ -53,7 +53,7 @@ export class Roulette extends Component {
             </Col>
             <Col sm={4} />
             <Col className="result" sm={4}>
-              <h3>Results</h3>
+              <h3>Results:</h3>
               {/* <ResultsContainer /> */}
             </Col>
           </Row>
