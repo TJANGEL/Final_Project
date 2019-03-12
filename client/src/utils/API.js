@@ -7,8 +7,8 @@ export default {
   searchTitles: title => {
     return axios.post("/search", { title: title });
   },
-  addTitleToDB: bookData => {
-    return axios.post("/api/titles", bookData);
+  addTitleToDB: titleData => {
+    return axios.post("/api/titles", titleData);
   },
   deleteTitle: id => {
     return axios.delete(`/api/titles/${id}`);
