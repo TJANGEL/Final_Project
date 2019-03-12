@@ -16,6 +16,17 @@ function Navi() {
         <Nav.Link href="/">Roulette</Nav.Link>
         <Nav.Link href="/favorites">Favorites</Nav.Link>
       </Nav>
+      <li>
+        <a
+          className="github"
+          href="https://github.com/TJANGEL/impatient_netflixing"
+          target="blank"
+        >
+          <span>
+            <i className="fab fa-github" />
+          </span>
+        </a>
+      </li>
     </Navbar>
   );
 }
