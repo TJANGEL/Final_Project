@@ -4,7 +4,7 @@ import shuffle from "lodash/shuffle";
 import throttle from "lodash/throttle";
 import { ListGroup, Button, Image } from "react-bootstrap";
 
-import articles from "../../data/movies";
+import movies from "../../data/movies";
 // import ResultsContainer from "../ResultsContainer";
 
 import FlipMove from "react-flip-move";
@@ -21,9 +21,6 @@ class ListItem extends Component {
         <h3>{this.props.name}</h3>
         <Image className="poster" src={this.props.img} />
         <h5>{moment(this.props.timestamp).format("MMM Do, YYYY")}</h5>
-        {/* <button onClick={this.props.clickHandler}>
-          <i className="far fa-trash-alt" />
-        </button> */}
         <Button variant="outline-secondary" className="link" href="#">
           Details
         </Button>
@@ -43,12 +40,12 @@ class Shuffle extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      removedArticles: [],
+      removedMovies: [],
       view: "list",
       order: "asc",
       sortingMethod: "chronological",
       enterLeaveAnimation: "accordianVertical",
-      articles
+      movies
     };
 
     this.toggleList = this.toggleList.bind(this);
@@ -79,7 +76,7 @@ class Shuffle extends Component {
     this.setState({
       order: this.state.order === "asc" ? "desc" : "asc",
       sortingMethod: "chronological",
-      articles: this.state.articles.sort(
+      movies: this.state.movies.sort(
         this.state.order === "asc" ? sortDesc : sortAsc
       )
     });
@@ -88,53 +85,53 @@ class Shuffle extends Component {
   sortShuffle() {
     this.setState({
       sortingMethod: "shuffle",
-      articles: shuffle(this.state.articles)
+      movies: shuffle(this.state.movies)
     });
   }
 
   moveArticle(source, dest, id) {
-    const sourceArticles = this.state[source].slice();
-    let destArticles = this.state[dest].slice();
+    const sourceMovies = this.state[source].slice();
+    let destMovies = this.state[dest].slice();
 
-    if (!sourceArticles.length) return;
+    if (!sourceMovies.length) return;
 
-    // Find the index of the article clicked.
+    // Find the index of the movie clicked.
     // If no ID is provided, the index is 0
-    const i = id ? sourceArticles.findIndex(article => article.id === id) : 0;
+    const i = id ? sourceMovies.findIndex(movie => movie.id === id) : 0;
 
-    // If the article is already removed, do nothing.
+    // If the movie is already removed, do nothing.
     if (i === -1) return;
 
-    destArticles = [].concat(sourceArticles.splice(i, 1), destArticles);
+    destMovies = [].concat(sourceMovies.splice(i, 1), destMovies);
 
     this.setState({
-      [source]: sourceArticles,
-      [dest]: destArticles
+      [source]: sourceMovies,
+      [dest]: destMovies
     });
   }
 
   sortRotate() {
-    const articles = this.state.articles.slice();
-    articles.unshift(articles.pop());
+    const movies = this.state.movies.slice();
+    movies.unshift(movies.pop());
 
     this.setState({
       sortingMethod: "rotate",
-      articles
+      movies
     });
   }
 
-  renderArticles() {
-    return this.state.articles.map((article, i) => {
+  renderMovies() {
+    return this.state.movies.map((movie, i) => {
       return (
         <ListItem
-          key={article.id}
+          key={movie.id}
           view={this.state.view}
           index={i}
           clickHandler={throttle(
-            () => this.moveArticle("articles", "removedArticles", article.id),
+            () => this.moveArticle("movies", "removedMovies", movie.id),
             800
           )}
-          {...article}
+          {...movie}
         />
       );
     });
@@ -173,7 +170,7 @@ class Shuffle extends Component {
             leaveAnimation={this.state.enterLeaveAnimation}
             typeName="ul"
           >
-            {this.renderArticles()}
+            {this.renderMovies()}
             <footer key="foot">
               <div className="abs-right">
                 {/* <Toggle
