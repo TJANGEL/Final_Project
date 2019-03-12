@@ -3,9 +3,13 @@ import Jumbotron from "../components/Jumbotron";
 import RouletteWheel from "../components/RouletteWheel";
 import { Row, Col, Container } from "react-bootstrap";
 import ResultsContainer from "../components/resultsContainer";
+import API from "../utils/API";
 
 const handleOnComplete = value => {
-  console.log(value);
+  // console.log(value);
+  API.findTitleByGenre(value).then(result => {
+    //TODO: Movies are loaded in result.data array
+  })
 };
 
 // function genGenres(charA, charZ) {
@@ -42,7 +46,6 @@ const movieGenres = [
   "Thrillers"
 ];
 
-const movies = [];
 
 export class Roulette extends Component {
   loadOptions() {
