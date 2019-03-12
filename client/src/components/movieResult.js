@@ -55,7 +55,7 @@ class MovieResult extends React.Component {
             <h4>{this.props.title}</h4>
           </div>
           <div className="btnDiv">
-            {// if link to book exists include View button else do not
+            {// if link to movie exists include View button else do not
             this.props.url ? (
               <a
                 href={this.props.url}
