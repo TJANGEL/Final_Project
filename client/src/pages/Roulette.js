@@ -45,6 +45,7 @@ export class Roulette extends Component {
           <Row>
             <Col sm={4}>
               <h3>Genre:</h3>
+              <br />
               <RouletteWheel
                 options={options}
                 baseSize={250}
@@ -54,6 +55,7 @@ export class Roulette extends Component {
             <Col sm={4} />
             <Col className="result" sm={4}>
               <h3>Results:</h3>
+              <br />
               {/* <ResultsContainer /> */}
             </Col>
           </Row>
