@@ -82,6 +82,14 @@ Click [here](https://peaceful-mountain-84461.herokuapp.com/) to view Heroku depl
 
 `cheerio`
 
+`bcrypt`
+
+`passport`
+
+`passport-jwt`
+
+`react-flip-move`
+
 ## Built With
 
 - [React.js](https://reactjs.org/)

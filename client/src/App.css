@@ -1,11 +1,44 @@
-.App {
+/* .App {
   text-align: center;
+} */
+.app {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+ul {
+  padding: 0;
+}
+
+html,
+body,
+input,
+button,
+select,
+option {
+  font-family: "museo-sans-rounded", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+#main-content {
+  flex: 1;
+  padding-bottom: 60px;
+}
+
+.card {
+  background: white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .App-header {
@@ -19,13 +52,8 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.remove-btn,
-.link {
-  margin-left: 1rem;
+.brand-name {
+  font-size: 50px;
 }
 
 @keyframes App-logo-spin {

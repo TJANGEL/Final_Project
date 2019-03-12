@@ -1,6 +1,9 @@
 import React from "react";
 import Jumbotron from "../components/Jumbotron";
 import { ListGroup, Button } from "react-bootstrap";
+import Shuffle from "../components/Shuffle";
+// import { Card, CardDeck } from "react-bootstrap";
+// import FlipMove from "react-flip-move";
 
 // import API from "../utils/API";
 
@@ -37,7 +40,6 @@ class Favorites extends React.Component {
         <Jumbotron>
           <h1>My Favorites</h1>
         </Jumbotron>
-
         {/* {this.state.titles.length ? (
           <ListGroup>
             {this.state.titles.map(title => (
@@ -45,7 +47,9 @@ class Favorites extends React.Component {
                 <Link to={"/title/" + title._id}>
                   {title.title} {title.title}
                 </Link>
-                <Button href="#">Link</Button>
+                <Button variant="outline-secondary" className="link" href="#">
+              Details
+            </Button>
                 <Button
                       className="remove-btn"
                       color="danger"
@@ -60,45 +64,9 @@ class Favorites extends React.Component {
         ) : (
           <h2>No Favorites Saved</h2>
         )} */}
-
-        <ListGroup className="mb-2">
-          <ListGroup.Item>
-            Kiss Kiss Bang Bang
-            <Button className="link" href="#" variant="outline-info">
-              Details
-            </Button>
-            <Button className="remove-btn" variant="outline-danger">
-              &times;
-            </Button>
-          </ListGroup.Item>
-          <ListGroup.Item>
-            Avengers
-            <Button className="link" href="#" variant="outline-info">
-              Details
-            </Button>
-            <Button className="remove-btn" variant="outline-danger">
-              &times;
-            </Button>
-          </ListGroup.Item>
-          <ListGroup.Item>
-            Wreck it Ralph
-            <Button className="link" href="#" variant="outline-info">
-              Details
-            </Button>
-            <Button className="remove-btn" variant="outline-danger">
-              &times;
-            </Button>
-          </ListGroup.Item>
-          <ListGroup.Item>
-            Frozen
-            <Button className="link" href="#" variant="outline-info">
-              Details
-            </Button>
-            <Button className="remove-btn" variant="outline-danger">
-              &times;
-            </Button>
-          </ListGroup.Item>
-        </ListGroup>
+        <div>
+          <Shuffle />
+        </div>
       </div>
     );
   }
