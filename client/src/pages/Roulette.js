@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import RouletteWheel from "../components/RouletteWheel";
 import { Row, Col, Container } from "react-bootstrap";
+import ResultsContainer from "../components/ResultsContainer";
 
 const handleOnComplete = value => {
   console.log(value);
@@ -24,7 +25,8 @@ const options = [
   "Thrillers",
   "Comedies",
   "Action & Adventure",
-  "Cult Movies"
+  "Cult Movies",
+  "Anime Features"
 ];
 
 export class Roulette extends Component {
@@ -32,7 +34,7 @@ export class Roulette extends Component {
     return (
       <div>
         <Row>
-          <Col sm={12}>
+          <Col>
             <Jumbotron>
               <h1>IMPATIENT NETFLIXING</h1>
               <h1>Spin the Wheel to Decide What You'll Watch Next</h1>
@@ -41,16 +43,18 @@ export class Roulette extends Component {
         </Row>
         <Container>
           <Row>
-            <Col sm={6}>
-              Filter:
+            <Col sm={4}>
+              <h3>Filter:</h3>
               <RouletteWheel
                 options={options}
                 baseSize={250}
                 onComplete={handleOnComplete}
               />
             </Col>
-            <Col className="result" sm={6}>
-              Result:
+            <Col sm={4} />
+            <Col className="result" sm={4}>
+              <h3>Results</h3>
+              {/* <ResultsContainer /> */}
             </Col>
           </Row>
         </Container>
