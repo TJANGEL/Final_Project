@@ -1,5 +1,5 @@
 import React from "react";
-import MovieResult from "./MovieResult";
+import MovieResult from "./movieResult";
 
 function ResultsContainer(props) {
   if (props.path === "/") {

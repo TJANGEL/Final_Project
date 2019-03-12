@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import RouletteWheel from "../components/RouletteWheel";
 import { Row, Col, Container } from "react-bootstrap";
-import ResultsContainer from "../components/ResultsContainer";
+import ResultsContainer from "../components/resultsContainer";
 
 const handleOnComplete = value => {
   console.log(value);
