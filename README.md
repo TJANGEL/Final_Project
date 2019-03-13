@@ -4,7 +4,7 @@
 
 App to help users find something to watch in the overwhelming options Netflix has to offer
 
-![Impatient Netflixing](#)
+![Impatient Netflixing](https://github.com/TJANGEL/impatient_netflixing/blob/master/client/src/img/impatient_netflxing_screenshot.jpg)
 
 ## Deployment (Heroku)
 
