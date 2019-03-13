@@ -30,6 +30,17 @@ h6 {
   padding: 0;
 }
 
+img{
+  float: right;
+  padding-right: 50px;
+}
+
+p{
+  padding: 50px 150px 0 150px;
+}
+
+
+
 #main-content {
   flex: 1;
   padding-bottom: 60px;
