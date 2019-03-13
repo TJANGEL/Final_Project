@@ -11,7 +11,7 @@ export class About extends Component {
           <h1 className="jumbotron-name">ABOUT</h1>
         </Jumbotron>
         <Row>
-          <Col sm={4}>
+          <Col sm={6}>
             <p className="about-text">
               Are you overcome with choice paralysis every time you try to
               Netflix and chill? If so, you like hundreds of other people will
@@ -26,7 +26,7 @@ export class About extends Component {
               what is in-store for your viewing pleasure!
             </p>
           </Col>
-          <Col sm={8}>
+          <Col sm={6}>
             <Image
               className="about-image"
               alt="netflix and chill"
