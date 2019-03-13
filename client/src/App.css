@@ -30,16 +30,14 @@ h6 {
   padding: 0;
 }
 
-img{
+img {
   float: right;
   padding-right: 50px;
 }
 
-p{
+p {
   padding: 50px 150px 0 150px;
 }
-
-
 
 #main-content {
   flex: 1;
@@ -73,6 +71,19 @@ p{
 .instructions {
   color: rgb(197, 6, 6);
   text-shadow: 1px 1px black;
+}
+
+.about-image {
+  width: 90%;
+  height: 80%;
+  padding-left: 0;
+}
+
+.about-text {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 600;
+  padding-right: 0;
 }
 
 @keyframes App-logo-spin {
