@@ -30,8 +30,6 @@ class App extends Component {
   }
 
   async componentWillMount() {
-    // console.log("Inside component")
-    // this.loadAllMovies();
     try {
       API.getMovies().then(resp => {
         console.log("Size of Movies DB:" + resp.data.length)
