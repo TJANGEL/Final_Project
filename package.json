@@ -31,10 +31,10 @@
     "express": "^4.16.4",
     "mongoose": "^5.4.16",
     "passport": "^0.4.0",
+    "if-env": "^1.0.4",
     "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
-    "if-env": "^1.0.4",
     "nodemon": "^1.18.10"
   }
 }
