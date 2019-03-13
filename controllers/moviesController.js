@@ -55,10 +55,10 @@ module.exports = {
     let sortedMovieObjects = removeDuplicates(movieObjects, "url")
     // console.log("sorted movieObjects size: " + sortedMovieObjects.length);
     db.Movies.create(sortedMovieObjects).then(dbModel => {
-      console.log("Size of data Saved:" + dbModel)
+      // console.log("Size of data Saved:" + dbModel)
       res.json(sortedMovieObjects)
     }).catch(err => {
-      // console.log(err) 
+      // console.log(err)
       if (err.name === 'MongoError' && err.code === 11000) {
         // ! Nothing to be done if duplicate key is encountered
       } else {
