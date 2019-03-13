@@ -6,10 +6,14 @@ import ResultsContainer from "../components/resultsContainer";
 import API from "../utils/API";
 
 const handleOnComplete = value => {
-  // console.log(value);
+  console.log(value);
   API.findTitleByGenre(value).then(result => {
     //TODO: Movies are loaded in result.data array
-  })
+    for (let i = 0; i < result.length; i++) {
+      let randomIndex = Math.floor(Math.random() * result.length);
+      return result[randomIndex];
+    }
+  });
 };
 
 // function genGenres(charA, charZ) {
@@ -46,7 +50,6 @@ const movieGenres = [
   "Thrillers"
 ];
 
-
 export class Roulette extends Component {
   loadOptions() {
     // Shuffle array
@@ -56,12 +59,6 @@ export class Roulette extends Component {
     let selected = shuffled.slice(0, 6);
     return selected;
   }
-
-  // randomly select movie from db
-  randomMovie = movies => {
-    let randomIndex = Math.floor(Math.random() * movies.length);
-    return movies[randomIndex];
-  };
 
   render() {
     return (
