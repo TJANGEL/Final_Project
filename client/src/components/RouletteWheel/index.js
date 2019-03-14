@@ -35,7 +35,7 @@ class RouletteWheel extends React.Component {
       "Cult Movies"
     ],
     baseSize: 275,
-    spinAngleStart: Math.random() * 10 + 10,
+    spinAngleStart: Math.random() * 10 + 15,
     spinTimeTotal: Math.random() * 3 + 4 * 1000
   };
 
