@@ -5,14 +5,6 @@ import { Row, Col, Container } from "react-bootstrap";
 import MovieCard from "../components/MovieCard.js";
 import API from "../utils/API";
 
-// const handleOnComplete = value => {
-//   console.log(value);
-//   API.findTitleByGenre(value).then(result => {
-//     //TODO: Movies are loaded in result.data array
-//     let randomMovie = Math.floor(Math.random() * result.data.length);
-//     return result.data[randomMovie];
-//   });
-// };
 const movieGenres = [
   "Action & Adventure",
   "Anime Features",
@@ -22,7 +14,7 @@ const movieGenres = [
   "Cult Movies",
   "Documentaries",
   "Dramas",
-  "Faith & Spirtuality",
+  // "Faith & Spirtuality",
   "Horror Movies",
   "Independent Movies",
   "International Movies",
@@ -78,7 +70,7 @@ export class Roulette extends Component {
         </Row>
         <Container className="container">
           <Row>
-            <Col sm={4}>
+            <Col sm={5}>
               <h3>Genre:</h3>
               <br />
               <RouletteWheel
@@ -87,8 +79,8 @@ export class Roulette extends Component {
                 onComplete={this.handleOnComplete}
               />
             </Col>
-            <Col sm={4} />
-            <Col className="result" sm={4}>
+            <Col sm={2} />
+            <Col className="result" sm={5}>
               <h3>Results:</h3>
               <br />
               <br />

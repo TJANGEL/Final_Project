@@ -74,15 +74,10 @@ h6 {
 
 .about-text {
   width: 100%;
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 600;
   padding-left: 50px;
   padding-right: 0;
-}
-
-.movie-name {
-  width: 300;
-  height: 300;
 }
 
 @keyframes App-logo-spin {

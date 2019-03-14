@@ -7,12 +7,11 @@ export default class MovieCard extends Component {
     // console.log(this.props.data);
     return (
       <div>
-        <Card style={{ width: "40rem", height: "40rem" }}>
+        <Card style={{ width: "35rem", height: "35rem" }}>
           <Card.Img
-            className="movie-name"
             variant="top"
             src={image}
-            style={{ width: "40rem", height: "35rem" }}
+            style={{ width: "35rem", height: "30rem" }}
           />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
@@ -23,16 +22,6 @@ export default class MovieCard extends Component {
             <Button href="/favorites" variant="success">
               Favorite
             </Button>
-
-            {/* <Button
-              name="Favorite"
-              href="/favorites"
-              variant="success"
-              onClick={this.handleSaveClick}
-              disabled={this.state.saved}
-            >
-              {this.state.saved ? "Saved" : "Save"}
-            </Button> */}
           </Card.Body>
         </Card>
       </div>
