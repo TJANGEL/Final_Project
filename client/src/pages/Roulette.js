@@ -75,7 +75,7 @@ export class Roulette extends Component {
               <br />
               <RouletteWheel
                 options={this.loadOptions()}
-                baseSize={280}
+                baseSize={265}
                 onComplete={this.handleOnComplete}
               />
             </Col>
