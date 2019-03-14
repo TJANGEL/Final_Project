@@ -91,6 +91,7 @@ export class Roulette extends Component {
             <Col className="result" sm={4}>
               <h3>Results:</h3>
               <br />
+              <br />
               <MovieCard data={this.state.movie} />
             </Col>
           </Row>
