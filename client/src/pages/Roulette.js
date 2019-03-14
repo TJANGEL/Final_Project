@@ -2,32 +2,17 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import RouletteWheel from "../components/RouletteWheel";
 import { Row, Col, Container } from "react-bootstrap";
-import ResultsContainer from "../components/resultsContainer";
+import MovieCard from "../components/MovieCard.js";
 import API from "../utils/API";
 
-const handleOnComplete = value => {
-  console.log(value);
-  API.findTitleByGenre(value).then(result => {
-    //TODO: Movies are loaded in result.data array
-    for (let i = 0; i < result.length; i++) {
-      let randomIndex = Math.floor(Math.random() * result.length);
-      return result[randomIndex];
-    }
-  });
-};
-
-// function genGenres(charA, charZ) {
-//   var a = [],
-//     i = charA.charCodeAt(0),
-//     j = charZ.charCodeAt(0);
-//   for (; i <= j; ++i) {
-//     a.push(String.fromCharCode(i));
-//   }
-//   return a;
-// }
-
-// const options = genGenres("a", "z");
-
+// const handleOnComplete = value => {
+//   console.log(value);
+//   API.findTitleByGenre(value).then(result => {
+//     //TODO: Movies are loaded in result.data array
+//     let randomMovie = Math.floor(Math.random() * result.data.length);
+//     return result.data[randomMovie];
+//   });
+// };
 const movieGenres = [
   "Action & Adventure",
   "Anime Features",
@@ -51,6 +36,13 @@ const movieGenres = [
 ];
 
 export class Roulette extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movie: {}
+    };
+  }
+
   loadOptions() {
     // Shuffle array
     const shuffled = movieGenres.sort(() => 0.5 - Math.random());
@@ -59,6 +51,17 @@ export class Roulette extends Component {
     let selected = shuffled.slice(0, 6);
     return selected;
   }
+
+  handleOnComplete = value => {
+    console.log(value);
+    API.findTitleByGenre(value).then(result => {
+      //TODO: Movies are loaded in result.data array
+      let randomMovie = Math.floor(Math.random() * result.data.length);
+      this.setState({ movie: result.data[randomMovie] });
+      console.log(this.state.movie);
+      // console.log(result.data[randomMovie]);
+    });
+  };
 
   render() {
     return (
@@ -81,14 +84,14 @@ export class Roulette extends Component {
               <RouletteWheel
                 options={this.loadOptions()}
                 baseSize={280}
-                onComplete={handleOnComplete}
+                onComplete={this.handleOnComplete}
               />
             </Col>
             <Col sm={4} />
             <Col className="result" sm={4}>
               <h3>Results:</h3>
               <br />
-              {/* <ResultsContainer /> */}
+              <MovieCard data={this.state.movie} />
             </Col>
           </Row>
         </Container>
