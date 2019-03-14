@@ -15,7 +15,9 @@ function Navi() {
   //   // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
   return (
     <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="/">IMPATIENT NETFLIXING</Navbar.Brand>
+      <Navbar.Brand id="brandName" href="/">
+        IMPATIENT NETFLIXING
+      </Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="/about">About</Nav.Link>
         <Nav.Link href="/register">Register</Nav.Link>
