@@ -32,7 +32,7 @@ class App extends Component {
   async componentWillMount() {
     try {
       API.getMovies().then(resp => {
-        // console.log("Size of Movies DB:" + resp.data.length)
+        console.log("Size of Movies DB:" + resp.data.length)
         if (resp.data.length === 0) {
           this.loadAllMovies();
         }

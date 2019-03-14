@@ -14,7 +14,7 @@ const movies = [
   {
     id: "c",
     timestamp: 1156564800000,
-    name: "The Avengers",
+    name: "Avengers: Infinity War",
     img:
       "https://images-na.ssl-images-amazon.com/images/I/A1t8xCe9jwL._SY679_.jpg"
   },
@@ -35,7 +35,7 @@ const movies = [
   {
     id: "f",
     timestamp: 1331697600000,
-    name: "Spiderman ,Into the SpiderVerse",
+    name: "Spider-Man: Into the Spider-Verse",
     img: "https://movinbed.com/wp-content/uploads/2019/01/spiderman.jpg"
   },
   {

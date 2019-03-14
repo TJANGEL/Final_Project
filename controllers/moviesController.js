@@ -22,6 +22,15 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByGenre: function (req, res) {
+    // console.log("Controller Genre:" + req.params.genre)
+    db.Movies.find({ genres: req.params.genre }).then(doc => {
+      console.log(doc.length)
+      res.json(doc);
+    }).catch(err => {
+      console.error(err);
+    })
+  },
   create: function (req, res) {
     db.Movies.create(req.body)
       .then(dbModel => res.json(dbModel))
@@ -40,16 +49,12 @@ module.exports = {
   },
   loadAllMovies: async function (req, res) {
     let maxPageNumber = await getMaxPageNumber();
-    // console.log(maxPageNumber)
     let movieObjects = await movieScraper(maxPageNumber);
-    // console.log("movieObjects size: " + movieObjects.length);
     let sortedMovieObjects = removeDuplicates(movieObjects, "url")
-    // console.log("sorted movieObjects size: " + sortedMovieObjects.length);
     db.Movies.create(sortedMovieObjects).then(dbModel => {
-      console.log("Size of data Saved:" + dbModel)
       res.json(sortedMovieObjects)
     }).catch(err => {
-      // console.log(err) 
+      // console.log(err)
       if (err.name === 'MongoError' && err.code === 11000) {
         // ! Nothing to be done if duplicate key is encountered
       } else {
@@ -59,9 +64,7 @@ module.exports = {
   },
   loadLatest: async function (req, res) {
     let movieObjects = await movieScraper(1);
-    // console.log("movieObjects size: " + movieObjects.length);
-    let sortedMovieObjects = removeDuplicates(movieObjects, "url")
-    // console.log("sorted movieObjects size: " + sortedMovieObjects.length);
+    let sortedMovieObjects = removeDuplicates(movieObjects, "url");
     sortedMovieObjects.forEach(movie => {
       db.Movies.findOneAndUpdate({ url: movie.url },
         movie,
@@ -75,13 +78,9 @@ module.exports = {
             }
           } else {
             //Success
-            // console.log("Updated title: " + movie.title)
           }
         })
     })
-    // db.Movies.create(sortedMovieObjects).then(dbModel => {
-    //   console.log("Size of data Saved:" + dbmodel.data.length)
-    // }).catch(err => { console.log(err) })
     res.json(movieObjects)
   }
 };
@@ -92,7 +91,6 @@ async function movieScraper(maxPageNumber, minRating = 0, audio = 'en', minYear 
   const URL = `https://www.flixable.com/?min-rating=${minRating}&audio=${audio}&min-year=${minYear}&max-year=${maxYear}&order=${order}&page=`;
 
   for (let start = 0; start <= maxPageNumber; start++) {
-    // console.log("scraping Page: " + start)
     let response = await axios.get(URL + start);
     let $ = cheerio.load(response.data);
     $(".poster-container").each((i, element) => {
@@ -104,7 +102,6 @@ async function movieScraper(maxPageNumber, minRating = 0, audio = 'en', minYear 
         .children("a")
         .children("img")
         .attr("alt");
-      // console.log(title);
       let titleLink = $(element)
         .children("a")
         .attr("href");
@@ -172,6 +169,5 @@ function getGenresFromOverlay(overlayLink) {
       genres.push(movieGenre)
     }
   })
-  // console.log(genres)
   return genres;
 }

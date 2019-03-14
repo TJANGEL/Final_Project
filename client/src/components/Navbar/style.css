@@ -1,0 +1,19 @@
+li {
+  list-style: none;
+}
+
+#brandName {
+  color: red;
+}
+
+.github {
+  color: red;
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  margin-left: 20px;
+}
+
+.github:hover {
+  color: white;
+}

@@ -35,7 +35,7 @@ class RouletteWheel extends React.Component {
       "Cult Movies"
     ],
     baseSize: 275,
-    spinAngleStart: Math.random() * 10 + 10,
+    spinAngleStart: Math.random() * 10 + 15,
     spinTimeTotal: Math.random() * 3 + 4 * 1000
   };
 
@@ -57,8 +57,8 @@ class RouletteWheel extends React.Component {
 
   getColor(item, maxitem) {
     const phase = 0;
-    const center = 128;
-    const width = 128;
+    const center = 122;
+    const width = 130;
     const frequency = (Math.PI * 2) / maxitem;
 
     const red = Math.sin(frequency * item + 2 + phase) * width + center;
@@ -80,9 +80,9 @@ class RouletteWheel extends React.Component {
 
     const canvas = this.refs.canvas;
     if (canvas.getContext) {
-      const outsideRadius = baseSize - 15;
-      const textRadius = baseSize - 55;
-      const insideRadius = baseSize - 75;
+      const outsideRadius = baseSize - 10;
+      const textRadius = baseSize - 60;
+      const insideRadius = baseSize - 90;
 
       ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, 600, 600);

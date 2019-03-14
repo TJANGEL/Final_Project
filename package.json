@@ -27,15 +27,15 @@
     "axios": "^0.18.0",
     "bcrypt": "^3.0.4",
     "cheerio": "^1.0.0-rc.2",
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "mongoose": "^5.4.16",
     "passport": "^0.4.0",
+    "if-env": "^1.0.4",
     "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "if-env": "^1.0.4",
     "nodemon": "^1.18.10"
   }
 }
