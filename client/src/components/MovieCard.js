@@ -7,8 +7,13 @@ export default class MovieCard extends Component {
     // console.log(this.props.data);
     return (
       <div>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img className="movie-name" variant="top" src={image} />
+        <Card style={{ width: "40rem", height: "40rem" }}>
+          <Card.Img
+            className="movie-name"
+            variant="top"
+            src={image}
+            style={{ width: "40rem", height: "35rem" }}
+          />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>{genres}</Card.Text>
