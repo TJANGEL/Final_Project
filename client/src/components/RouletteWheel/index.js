@@ -103,7 +103,7 @@ class RouletteWheel extends React.Component {
         ctx.fill();
 
         ctx.save();
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "ivory";
         ctx.translate(
           baseSize + Math.cos(angle + arc / 2) * textRadius,
           baseSize + Math.sin(angle + arc / 2) * textRadius
