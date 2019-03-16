@@ -50,9 +50,5 @@ module.exports = {
         };
       });
     });
-  },
-  // Change the user's password
-  update: (req, res) => {},
-  // Log the user out
-  destroy: (req, res) => {}
+  }
 };

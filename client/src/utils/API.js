@@ -12,5 +12,11 @@ export default {
   },
   findTitleByGenre: genre => {
     return axios.get(`/movies/${genre}`);
+  },
+  login: user => {
+    return axios.post("/user/login", user);
+  },
+  register: user => {
+    return axios.post("user/register", user);
   }
 };
