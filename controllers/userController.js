@@ -1,5 +1,6 @@
 const db = require("../models");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 module.exports = {
   // Make a new user
@@ -12,7 +13,11 @@ module.exports = {
         if (err) throw err;
         bcrypt.hash(req.body.password, salt, (err, hash) => {
           if (err) throw err;
-          db.User.create({ email: req.body.email, password: hash })
+          db.User.create({
+            email: req.body.email,
+            name: req.body.name,
+            password: hash
+          })
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
         });
@@ -27,31 +32,27 @@ module.exports = {
       }
       bcrypt.compare(req.body.password, user.password).then(isMatch => {
         if (isMatch) {
-          // ### TO DO ###
-          // require jwt module
           jwt.sign(
-            { id: user._id },
+            // payload
+            { id: user.id, name: user.name },
             process.env.SECRETORKEY,
             { expiresIn: 36000 },
             (err, token) => {
               if (err)
-                res
-                  .status(500)
-                  .json({ error: "Error signing token", raw: err });
+                res.status(500).json({ token: "Error signing token", raw: err });
               res.json({
                 success: true,
                 token: `Bearer ${token}`
               });
-            }
-          );
+            });
         } else {
           res.status(400).json({ password: "Password incorrect" });
-        }
+        };
       });
     });
   },
   // Change the user's password
   update: (req, res) => {},
-  // Remove the user's account
+  // Log the user out
   destroy: (req, res) => {}
 };

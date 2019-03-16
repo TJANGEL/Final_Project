@@ -1,5 +1,5 @@
+require("dotenv").config();
 const express = require("express");
-const session = require("express-session");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const routes = require("./routes");
@@ -16,15 +16,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Passport authentification
-// ### TO DO ###
-// require session package cos express separated it out
-// app.use(session({ secret: process.env.SECRET }));
 app.use(passport.initialize());
-app.use(passport.session());
+require("./passport")(passport);
 
 // Add routes, both API and view
 app.use(routes);
-// require("./routes/apiRoutes")(app);
 
 // Connect to the Mongo DB
 mongoose
