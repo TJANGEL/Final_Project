@@ -1,30 +1,37 @@
 import React, { Component } from "react";
 import { Button, Form } from "react-bootstrap";
 import Jumbotron from "../components/Jumbotron";
+import API from "../utils/API";
 
 export default class Register extends Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   this.state = {
-  //     email: "",
-  //     password: ""
-  //   };
-  // }
+    this.state = {
+      email: "",
+      name: "",
+      password: ""
+    };
+  };
 
   // validateForm() {
   //   return this.state.email.length > 0 && this.state.password.length > 0;
   // }
 
-  // handleChange = event => {
-  //   this.setState({
-  //     [event.target.id]: event.target.value
-  //   });
-  // };
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  };
 
-  // handleSubmit = event => {
-  //   event.preventDefault();
-  // };
+  handleSubmit = event => {
+    event.preventDefault();
+    API.register({
+      email: this.state.email,
+      name: this.state.name,
+      password: this.state.password
+    }).then(res => this.props.history.replace("/login"));
+  };
 
   render() {
     return (
@@ -33,15 +40,14 @@ export default class Register extends Component {
           <h1 className="jumbotron-name">REGISTER</h1>
         </Jumbotron>
         <div className="Register">
-          {/* <Form onSubmit={this.handleSubmit}> */}
-          <Form>
-            <Form.Group controlId="formBasicEmail" bsSize="large">
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group controlId="email" bsSize="large">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 autoFocus
                 type="email"
-                // value={this.state.email}
-                // onChange={this.handleChange}
+                value={this.state.email}
+                onChange={this.handleChange}
                 placeholder="Enter email"
               />
               <Form.Text className="text-muted">
@@ -49,13 +55,23 @@ export default class Register extends Component {
               </Form.Text>
             </Form.Group>
 
-            <Form.Group controlId="formBasicPassword" bsSize="large">
+            <Form.Group controlId="name" bsSize="large">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                value={this.state.name}
+                onChange={this.handleChange}
+                placeholder="Enter username"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="password" bsSize="large">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                // value={this.state.password}
-                // onChange={this.handleChange}
                 type="password"
-                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handleChange}
+                placeholder="Enter password"
               />
             </Form.Group>
             <Button
@@ -63,7 +79,6 @@ export default class Register extends Component {
               type="submit"
               block
               bsSize="large"
-              href="/login"
               // disabled={!this.validateForm()}
             >
               Register
