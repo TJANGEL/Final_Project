@@ -1,5 +1,7 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const passport = require("passport");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,13 +16,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Passport authentification
-// app.use(session({ secret: process.env.PASSPORT_SECRET }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+require("./passport")(passport);
 
 // Add routes, both API and view
 app.use(routes);
-// require("./routes/apiRoutes")(app);
 
 // Connect to the Mongo DB
 mongoose
