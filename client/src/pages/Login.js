@@ -49,7 +49,6 @@ export default class Login extends Component {
           <h1 className="jumbotron-name">LOGIN</h1>
         </Jumbotron>
         <div className="Login">
-          {/* <Form onSubmit={this.handleSubmit}> */}
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="email" bsSize="large">
               <Form.Label>Email</Form.Label>
